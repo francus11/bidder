@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/fontello/css/fontello.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+</body>
+<header th:fragment="header-nav">
+    <div class="header-box">
+        <div id="header-square-left" class="header-square">
+            <img th:src="@{/logo/logo_white.png}" alt="logo-small">
+        </div>
+        <div id="links">
+            <a href="favourite">Favourite</a>
+            <a href="patterns">Patterns</a>
+            <a href="account">Account</a>
+        </div>
+        <div id="header-square-right" class="header-square"></div>
+    </div>
+</header>
+<footer th:fragment="footer"></footer>
+</html>
