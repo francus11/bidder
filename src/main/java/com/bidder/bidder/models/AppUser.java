@@ -3,7 +3,11 @@ package com.bidder.bidder.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity(name = "user")
 public class AppUser {
@@ -14,7 +18,9 @@ public class AppUser {
     private String username;
     private String email;
     private String password;
-
+    @Getter
+    @Setter
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<SearchPattern> patterns = new ArrayList<>();
     public AppUser() {
@@ -52,6 +58,7 @@ public class AppUser {
     public void setPassword(String password) {
         this.password = password;
     }
+
     @Override
     public String toString() {
         return "User";
