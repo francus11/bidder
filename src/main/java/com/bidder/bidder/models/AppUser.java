@@ -1,5 +1,8 @@
 package com.bidder.bidder.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity(name = "user")
@@ -11,6 +14,9 @@ public class AppUser {
     private String username;
     private String email;
     private String password;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<SearchPattern> patterns = new ArrayList<>();
     public AppUser() {
     }
     public AppUser(String username, String email, String password) {
