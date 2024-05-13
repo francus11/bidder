@@ -1,16 +1,25 @@
 package com.bidder.bidder.models;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity(name = "user")
-public class AppUser {
+@Builder
+@AllArgsConstructor
+public class AppUser implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //@Column(name = "ID", updatable = false)
@@ -18,6 +27,9 @@ public class AppUser {
     private String username;
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
+    @Transient
+    private Role role = Role.USER;
     @Getter
     @Setter
     @JsonIgnore
@@ -62,5 +74,13 @@ public class AppUser {
     @Override
     public String toString() {
         return "User";
+    }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));        
+    }
+    @Override
+    public String getUsername() {
+        return username;
     }
 }
