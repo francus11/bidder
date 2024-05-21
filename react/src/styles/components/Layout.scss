@@ -1,0 +1,20 @@
+@use "../partials/variables";
+
+body {
+    margin: 0;
+    background-color: variables.$primary-back-color;
+    min-height: calc(100vh + 100px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: variables.$default-font;
+    align-items: center;
+}
+
+main {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    align-items: center;
+}

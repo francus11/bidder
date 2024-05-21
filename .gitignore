@@ -35,3 +35,6 @@ build/
 ### log files ###
 *.log
 *.log.*.gz
+
+### react project ###
+/react/node_modules

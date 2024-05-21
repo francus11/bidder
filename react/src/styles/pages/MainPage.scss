@@ -1,0 +1,62 @@
+@use '../partials/variables';
+
+main {
+    color: white;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.logo-img{
+    width: 500px;
+    display: flex;
+    justify-content: end;
+    height: auto;
+}
+
+.logo-img img{
+    max-height: 400px;
+    width: auto;
+}
+
+.tile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-box {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-redirect {
+    background-color: variables.$theme-first-color;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.right-justify p{
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: right;
+    line-height: 3rem;
+}
+
+.button-box {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bigger {
+    width: 600px;
+}
