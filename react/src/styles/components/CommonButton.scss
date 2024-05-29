@@ -1,0 +1,21 @@
+@use "../partials/variables";
+
+.common-button {
+    padding: 0.75rem 1.5rem;
+    background-color: variables.$theme-first-color;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border-radius: 2rem;
+    text-decoration: none;
+    
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:visited, &:active, &:focus  {
+        text-decoration: none;
+    }
+
+}
