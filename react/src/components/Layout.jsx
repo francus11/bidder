@@ -4,10 +4,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/components/Layout.scss";
 
-function Layout({ children }) {
+function Layout({ children , mainClass}) {
     return (
         <>  <Header/>
-            <main>{children}</main>
+            <main className={mainClass}>{children}</main>
             <Footer/>
         </>
     );
@@ -15,6 +15,7 @@ function Layout({ children }) {
 
 Layout.propTypes = {
     children: PropTypes.node,
+    mainClass: PropTypes.string,
 };
 
 export default Layout

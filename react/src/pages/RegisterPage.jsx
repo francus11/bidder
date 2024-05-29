@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 
 function RegisterPage() {
     return (
-        <Layout>
+        <Layout mainClass="login-register">
             <form
                 id="register-form"
                 className="invisible"

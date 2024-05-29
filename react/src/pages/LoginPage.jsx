@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
+// import styles from "../styles/pages/LoginPage.module.scss";
 import "../styles/pages/LoginPage.scss";
 import config from "../config";
 
@@ -45,7 +46,7 @@ function LoginPage() {
     }
 
     return (
-        <Layout>
+        <Layout mainClass="login-register">
             <form
                 id="login-form"
                 className="visible"
