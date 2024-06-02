@@ -13,24 +13,24 @@ form {
     padding: 2em;
     width: 500px;
     border-radius: 25px;
-}
+    input,
+    button {
+        height: 3em;
+        border-radius: 1.5em;
+        font-family: variables.$default-font;
+        font-size: 1.5em;
+        border: none;
+    }
 
-.form-title {
-    font-size: 2.5rem;
-    color: white;
-    margin-left: 2rem;
+    .form-title {
+        font-size: 2.5rem;
+        color: white;
+        margin-left: 2rem;
+    }
 }
 
 input,
-button {
-    height: 3em;
-    border-radius: 1.5em;
-    font-family: variables.$default-font;
-    font-size: 1.5em;
-    border: none;
-}
-
-input, a > input {
+a > input {
     padding: 0 2rem;
     &:focus {
         outline: none;
@@ -40,7 +40,8 @@ input, a > input {
 .form-buttons {
     display: flex;
     column-gap: 2em;
-    button, > a {
+    button,
+    > a {
         flex: 1;
         button {
             width: 100%;

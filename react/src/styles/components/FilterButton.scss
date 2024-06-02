@@ -1,0 +1,24 @@
+@use "../partials/variables";
+
+.filter-button {
+    background-color: #D9D9D9;
+    color: black;
+    transition: background-color, color 0.25s ease;
+
+    &:hover {
+        background-color: variables.$theme-first-color;
+        color:white;
+    }
+
+    i {
+        margin-left: 0.6rem;
+    }
+    
+    i::before {
+        margin: 0;
+    }
+
+    .separator {
+        margin-right: 0.4rem;
+    }
+}

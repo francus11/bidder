@@ -1,0 +1,73 @@
+.new-pattern-page {
+    row-gap: 1.2rem;
+
+    #filters-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        #buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        #pattern-name {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            gap: 0.5rem;
+
+            div {
+                display: flex;
+                align-items: center;
+            }
+
+            input {
+                background-color: inherit;
+                border: none;
+                color: white;
+                font-size: 2rem;
+                padding: 0;
+                font-family: inherit;
+            }
+        }
+    }
+
+    #enter-query {
+        min-width: 320px;
+        max-width: 100%;
+        background-color: white;
+        height: 4rem;
+        border-radius: 2rem;
+
+        input {
+            height: 4rem;
+            font-family: inherit;
+            font-size: 1.2rem;
+            border: none;
+            padding: 0;
+            padding-left: 2rem;
+            min-width: 320px;
+            max-width: 100%;
+            border-radius: 2em;
+        }
+
+        i {
+            color: black;
+            padding-right: 1rem;
+        }
+    }
+
+    #filters {
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+        gap: 0.6rem 1rem;
+        justify-content: start;
+    }
+
+    .save-button {
+        margin-top: auto;
+    }
+}

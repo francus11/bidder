@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../styles/components/CommonButton.scss";
 
 function CommonButton({ children, onClick, className }) {
-    const buttonClassName = `common-button ${className}`;
+    const buttonClassName = className ? `common-button ${className}` : 'common-button';
 
     return (
         <div className={buttonClassName} onClick={onClick}>

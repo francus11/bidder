@@ -14,7 +14,7 @@ body {
 main {
     width: 1000px;
     display: flex;
-    justify-content: stretch;
+    justify-content: start;
     flex: 1 0 auto;
-    align-items: center;
+    align-items: start;
 }
