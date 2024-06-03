@@ -2,9 +2,6 @@
 
 header {
     width: 100%;
-}
-
-header {
     height: 70px;
     border-radius: 0 0 25px 25px;
     background: #656565;
@@ -19,7 +16,8 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    width: 1000px;
+    width: 980px;
+
     .header-square {
         display: flex;
         width: 70px;
@@ -30,6 +28,11 @@ header {
             max-width: 80%;
             height: auto;
         }
+    }
+
+    @media screen and (max-width: 980px) {
+        margin: 0 1rem;
+        
     }
 }
 

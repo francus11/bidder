@@ -6,6 +6,7 @@ import Patterns  from "./pages/PatternsPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import NewPatternPage from "./pages/NewPatternPage.jsx";
+import ResultsPage from "./pages/ResultsPage.jsx";
 
 ReactDOM.createRoot(document.querySelector("body")).render(
     <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.querySelector("body")).render(
                 <Route path="/login" Component={LoginPage}></Route>
                 <Route path="/register" Component={RegisterPage}></Route>
                 <Route path="/new-pattern" Component={NewPatternPage}></Route>
+                <Route path="/results" Component={ResultsPage}></Route>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

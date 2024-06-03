@@ -12,9 +12,14 @@ body {
 }
 
 main {
-    width: 1000px;
+    width: 980px;
     display: flex;
     justify-content: start;
     flex: 1 0 auto;
     align-items: start;
+    @media screen and (max-width: 980px) {
+        width: 90%;
+        padding: 0 1rem;
+        
+    }
 }
