@@ -5,7 +5,7 @@ import "../styles/pages/MainPage.scss";
 
 function MainPage() {
     return (
-        <Layout>
+        <Layout checkLogin={false}>
             <div className="tile">
                 <div className="text-box">
                     <h1>Buy items cheaper and easier with Bidder</h1>

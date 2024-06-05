@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.querySelector("body")).render(
                 <Route path="/login" Component={LoginPage}></Route>
                 <Route path="/register" Component={RegisterPage}></Route>
                 <Route path="/new-pattern" Component={NewPatternPage}></Route>
-                <Route path="/results" Component={ResultsPage}></Route>
+                <Route path="/results/:patternId" Component={ResultsPage}></Route>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

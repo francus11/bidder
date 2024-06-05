@@ -1,6 +1,6 @@
-import {useRef} from "react";
+import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
@@ -9,58 +9,81 @@ import Layout from "../components/Layout";
 import "../styles/pages/LoginPage.scss";
 import config from "../config";
 
-
+import { Helmet } from "react-helmet";
 
 function LoginPage() {
-    const username = useRef(null);
-    const password = useRef(null);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleUsernameChange = (event) => {
+        setUsername(event.target.value);
+    };
+    const handlepasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+
     const navigate = useNavigate();
 
-    const postLogin = event => {
-        console.log(username.current.value);
-        console.log(password.current.value);
+    const postLogin = (event) => {
         event.preventDefault();
         axios({
             url: config.apiUrl + "/api/auth/authenticate",
             method: "POST",
-            headers: {
-                
-            },
+            headers: {},
             data: {
-                username: username.current.value,
-                password: password.current.value
-            }
+                username: username,
+                password: password,
+            },
         })
-        .then(res => {
-            console.log(res);
-            localStorage.setItem('token', res.data.token);
-            navigate('/patterns');
-        })
-        .catch(e => {
-            console.log(e);
-        });
+            .then((res) => {
+                localStorage.setItem("token", res.data.token);
+                navigate("/patterns");
+            })
+            .catch((e) => {
+                if (e.response && e.response.status === 403) {
+                    document.getElementsByClassName("login-error")[0].innerHTML = "Wrong username or password";
+                    document.getElementsByClassName("login-error")[0].style.display = 'block';
+                    document.getElementsByName("password")[0].value = "";
+                    setPassword("");
+                }
+            });
     };
 
-    const handleLoginSubmit = event => {
-        postLogin(event);
-    }
+    const handleLoginSubmit = (event) => {
+        if (username === "" || password === "") {
+            event.preventDefault();
+            document.getElementsByClassName("login-error")[0].innerHTML = "Type login and password";
+            document.getElementsByClassName("login-error")[0].style.display = 'block';
+        } else {
+            postLogin(event);
+        }
+    };
 
     return (
-        <Layout mainClass="login-register">
+        <Layout mainClass="login-register" checkLogin={false}>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <form
                 id="login-form"
                 className="visible"
                 onSubmit={handleLoginSubmit}
             >
                 <div className="form-title">Login</div>
+                <div className="error-text login-error"></div>
                 <input
                     type="text"
                     name="login"
                     className="login-input"
                     placeholder="Username"
-                    ref={username}
+                    onChange={handleUsernameChange}
                 />
-                <input type="password" name="password" placeholder="Password" ref={password}/>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={handlepasswordChange}
+                />
 
                 <div className="form-buttons">
                     <Link to={"/register"}>
