@@ -14,7 +14,6 @@ function Layout({ children , mainClass, checkLogin = true}) {
 
     useEffect(() => { // Wywołaj navigate() wewnątrz useEffect()
         const checkLoginValidity = (token) => {
-            console.log(token);
             if (!token) return false;
             
             try {
