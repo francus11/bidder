@@ -1,0 +1,102 @@
+@use "../../styles/partials/variables";
+
+.drop-down-list {
+    // z-index: 10000;
+    width: 300px;
+    position: relative;
+
+    &, & * {
+        // z-index: 10;
+    }
+
+    .drop-down-list-btn {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1.5rem;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 1.5rem;
+        color: #000;
+        font-weight: 500;
+
+        &.drop-down-multiselect-list-btn {
+            max-width: 300px;
+        }
+        
+        &.active {
+            border-radius: 1.5rem 1.5rem 0 0;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+
+    .drop-down-list-content {
+        z-index: 10;
+        display: none;
+        position: absolute;
+        /* top: 110%; */
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+        border-radius: 0 0 4px 4px;
+        // border-radius: 0 0 1.5rem 1.5rem;
+        overflow-y: auto;
+        max-height: 200px;
+        min-height: 50px;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+
+        &::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            border-radius: 1rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: variables.$theme-first-color;
+            border-radius: 4px;
+        }
+        
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: variables.$theme-first-color-lighter;
+        }
+
+        &.active {
+            display: block;
+        }
+
+        .item {
+            color:#000;
+            padding: 0.25rem 1.5rem;
+            cursor: pointer;
+
+            svg {
+                margin-right: 0.5rem;
+            }
+
+            &:hover {
+                background: #acacac;
+            }
+            &:hover:last-child {
+                border-radius: 0 0 4px 4px;
+
+            }
+        }
+    }
+    button {
+        z-index: -1;
+        display: block;
+        width: 300px;
+        margin: 0 auto;
+    }
+}
+
+

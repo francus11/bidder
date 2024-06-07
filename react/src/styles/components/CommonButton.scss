@@ -8,10 +8,11 @@
     color: white;
     border-radius: 2rem;
     text-decoration: none;
-    
+    transition: background-color 0.25s ease;
 
     &:hover {
         cursor: pointer;
+        background-color: variables.$theme-first-color-lighter;
     }
 
     &:visited, &:active, &:focus  {

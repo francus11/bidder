@@ -1,4 +1,6 @@
 @use "../partials/variables";
+@import "../partials/breakpoints";
+
 
 main.login-register {
     flex-direction: column;
@@ -12,7 +14,7 @@ main.login-register {
         background-color: #4f4f4f;
         padding: 2em;
         width: 500px;
-        border-radius: 25px;
+        border-radius: 2rem;
         input,
         button {
             height: 3em;

@@ -31,7 +31,9 @@ public class SecurityConfig {
             "/swagger-ui/**",
             "/v3/api-docs/**",
             "/**",
-            "/api/allegro-auth/**"
+            "/api/allegro/auth/**",
+            "/user/**",
+            "/api/allegro/categories/**",
     };
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;

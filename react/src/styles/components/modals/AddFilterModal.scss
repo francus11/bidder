@@ -1,0 +1,52 @@
+@use "../../partials/variables";
+
+.add-filter-modal {
+    background-color: variables.$primary-back-color;
+    color: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    z-index: 1001;
+
+    .add-filter-modal-title {
+        font-size: 2rem;
+        // font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    .add-filter-modal-content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        .drop-down-list{
+            min-width: 300px;
+            width: 100%;
+        }
+        
+        .add-filter-modal-content-filter {
+            display: flex;
+            gap: 1rem;
+            
+            input {
+                width: 100px;
+                padding: 0.75rem 1.5rem;
+                border-radius: 2rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        
+        }
+    }
+
+    .add-filter-modal-buttons {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        
+        .common-button {
+            flex: 1;
+        }
+    }
+}
